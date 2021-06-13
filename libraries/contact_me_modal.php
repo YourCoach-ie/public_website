@@ -1,7 +1,7 @@
 <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <form action="." method="post" class="col-md-12" role="form">
+      <form action="." method="post" class="col-md-12" role="form" id="contact_form">
         <input type="hidden" name="action" id="action" value="contact_form">
         <div class="modal-header text-center">
           <h4 class="modal-title w-100 font-bold">Write to me</h4>
@@ -29,8 +29,11 @@
           </div>
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <input type="hidden" name="token" value="<?php echo $token; ?>">
-          <button class="btn btn-elegant">Send<i class="fab fa-telegram-plane ml-1"></i></button>
+          <input type="hidden" name="session_token" value="<?php echo $session_token; ?>">
+          <button class="btn btn-elegant g-recaptcha" 
+        data-sitekey="<?php echo reCAPTCHA_SITE_KEY;?>" 
+        data-callback='onSubmit' 
+        data-action='submit'>Send<i class="fab fa-telegram-plane ml-1"></i></button>    
         </div>
       </form>
     </div>

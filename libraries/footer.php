@@ -1,4 +1,4 @@
-<?php $_SESSION['token'] = $token;?>
+<?php $_SESSION['session_token'] = $session_token;?>
 <footer class="page-footer font-small mt-4" style="background-color:#2E2E2E!important;">
   <div class="container">
     <div class="row">
@@ -14,7 +14,15 @@
   <div class="footer-copyright text-center py-3">© 2021 Copyright:
     <a href="https://pweb.solutions"> YourCoach.ie  |  Designed by: PWeb.Solutions</a>
   </div>
-</footer>             
+</footer>
+
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo reCAPTCHA_SITE_KEY;?>"></script>
+<script>
+   function onSubmit(token) {
+     document.getElementById("contact_form").submit();
+     document.getElementById("contact_form2").submit();
+   }
+ </script>
 
 <script>
 new WOW().init();

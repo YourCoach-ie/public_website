@@ -5,6 +5,25 @@
 if (isset($_POST["action"])) {
 	$action = $_POST["action"];
 
+	// Google reCaptcha
+		$token = $_POST["g-recaptcha-response"];
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL,"https://www.google.com/recaptcha/api/siteverify");
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('secret' => reCAPTCHA_SECRET_KEY, 'response' => $token)));
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($ch);
+		curl_close($ch);
+		$arrResponse = json_decode($response, true);
+		
+	// Verify Google reCaptcha
+		if($arrResponse["success"] == '1' && $arrResponse["score"] >= 0.5) {
+	//
+		} else {
+			$action = '';
+}
+
+
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Contact Me XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 	if ($action == "contact_form") {
@@ -18,12 +37,12 @@ if (isset($_POST["action"])) {
 			if (preg_match('/viagra|poker|casino|bitcoin|http|и/', strtolower($form_message))
 			OR  preg_match('/viagra|poker|casino|bitcoin|http|и/', strtolower($form_name))
 			) {
-                echo "<meta http-equiv=\"refresh\" content=\"1; URL='https://".$_SERVER['HTTP_HOST']."' \" />";
+            //   echo "<meta http-equiv=\"refresh\" content=\"1; URL='https://".$_SERVER['HTTP_HOST']."' \" />";
 				echo '<br><br><br>PWeb SPAM Protection - Invalid Message!';
                 exit();
             }  
-            if ($_SESSION['token'] !== $_POST["token"]) {
-                echo "<meta http-equiv=\"refresh\" content=\"1; URL='https://".$_SERVER['HTTP_HOST']."' \" />";
+            if ($_SESSION['session_token'] !== $_POST["session_token"]) {
+            //    echo "<meta http-equiv=\"refresh\" content=\"1; URL='https://".$_SERVER['HTTP_HOST']."' \" />";
 				echo '<br><br><br>Invalid Session!';
                 exit();
 			}
@@ -43,6 +62,8 @@ if (isset($_POST["action"])) {
 			$message .= '<br><br><span style="color:#0078ae;"><b>Name:</b></span> '.$form_name;
 			$message .= '<br><span style="color:#0078ae;"><b>Email:</b></span> '.$form_email;
 			$message .= '<br><span style="color:#0078ae;"><b>Message:</b></span><br>'.$form_message;
+			$message .= '<br><br><span style="color:#0078ae;"><b>Google reCaptcha IP:</b></span><br>'.$arrResponse["hostname"];
+			$message .= '<br><br><span style="color:#0078ae;"><b>Google reCaptcha Score:</b></span><br>'.$arrResponse["score"];
 			$message .= '</p></body></html>';
 			mail($_yourcoach_mail_to,$subject,$message,$headers);
 		
@@ -74,18 +95,19 @@ if (isset($_POST["action"])) {
 			$message .= '<img src="https://www.gravatar.com/avatar/'.md5(strtolower(trim($_POST['contact_mail']))).'size=350">';
 			$message .= '<br><br><span style="color:#0078ae;"><b>Name:</b></span> '.$_POST["contact_name"];
 			$message .= '<br><span style="color:#0078ae;"><b>Email:</b></span> '.$_POST["contact_mail"];
+			$message .= '<br><br><span style="color:#0078ae;"><b>Google reCaptcha IP:</b></span><br>'.$arrResponse["hostname"];
+			$message .= '<br><br><span style="color:#0078ae;"><b>Google reCaptcha Score:</b></span><br>'.$arrResponse["score"];
 			$message .= '</p></body></html>';
 			mail($_yourcoach_mail_to,$subject,$message,$headers);
 
 		// Insert into Database
-			$yourcoach_db->form_subscribe($form_name, $form_email, 'website_subscribe_me', $_SESSION['token']);
+			$yourcoach_db->form_subscribe($form_name, $form_email, 'website_subscribe_me', $_SESSION['session_token']);
 	}
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Done XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 }
 else {echo "failed!";}
-	
 ?>
 
 </html>
