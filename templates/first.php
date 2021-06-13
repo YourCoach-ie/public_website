@@ -1,12 +1,12 @@
 <main>
 
 <div class="view jarallax" style="height: 100vh;">
-  <img id="pat_background" class="jarallax-img" src="./static/img/phanlax/aggie_bg1.jpg"/>
+  <img id="pat_background" class="jarallax-img" src="./static/img/phanlax/aggie_bg1.jpg" alt="Picture of Aggie"/>
   <div class="container h-100 d-flex justify-content-start align-items-center">
     <div class="row mt-200">
       <div class="col-md-1 wow fadeIn"></div>
         <div class="col-md-8 wow fadeIn" align="center">
-          <img src="./static/img/logos/logo_2020.png" width="20%" style="margin:0 40px 10px 40px;">
+          <img src="./static/img/logos/logo_2020.png" alt="YourCoach.ie Logo" width="20%" style="margin:0 40px 10px 40px;">
           <h1 class="wow fadeInDown" data-wow-delay="0.3s">YOUR COACH</h1>
           <h5 class="wow fadeIn" data-wow-delay="0.4s">Business - Career - Life</h5>
         </div>
@@ -21,15 +21,14 @@
       <h1 class="text-center white-text text-uppercase font-weight-bold mt-5 mb-3 mt-4 wow fadeIn" data-wow-delay="0.2s">Professional Coaching Services</h1>
       <p class="text-center white-text text-uppercase font-weight-bold  wow fadeIn" data-wow-delay="0.2s">Building Strong Foundations for Your Personal and Professional Development</p>
       <div class="line wow fadeIn" data-wow-delay="0.2s"></div>
-        <div class="row mt-5 pt-5">
-          <div class="col-lg-5 col-md-12 mb-5 wow fadeIn" data-wow-delay="0.4s">
-            <img src="./static/img/pictures/aggie_first.jpg" class="img-fluid z-depth-1" alt="My photo">
-          </div>
-        <div class="col-lg-6 offset-lg-1 col-md-12 wow fadeIn" data-wow-delay="0.4s">
-          <p class="grey-text mb-4" align="justify">
-            <?php echo $yourcoach_db->get_Text('First', 'Intro');?> 
-          </p>
+      <div class="row mt-5 pt-5">
+        <div class="col-lg-5 col-md-12 mb-5 wow fadeIn" data-wow-delay="0.4s">
+          <img src="./static/img/pictures/aggie_first.jpg" class="img-fluid z-depth-1" alt="My photo">
         </div>
+      <div class="col-lg-6 offset-lg-1 col-md-12 wow fadeIn" data-wow-delay="0.4s">
+        <p class="grey-text mb-4" align="justify">
+          <?php echo $yourcoach_db->get_Text('First', 'Intro');?> 
+        </p>
       </div>
     </section>
   </div>
@@ -44,7 +43,7 @@
       <div class="col-lg-3 col-sm-6 text-center pt-4">
         <div class="icon-area">
           <div class="circle-icon">
-            <a href="./?p=life"><img src="./static/img/icons/life.jpg" class="img-fluid" width="50%"></a>
+            <a href="./?p=life"><img src="./static/img/icons/life.jpg" alt="Life Coaching Logo" class="img-fluid" width="50%"></a>
           </div>
           <br>
           <strong>LIFE</strong>
@@ -53,7 +52,7 @@
       </div>
       <div class="col-lg-3 col-sm-6 text-center pt-4">
         <div class="icon-area">
-          <a href="./?p=business"><img src="./static/img/icons/business.jpg" class="img-fluid" width="50%"></a>
+          <a href="./?p=business"><img src="./static/img/icons/business.jpg" alt="Business Coaching Logo" class="img-fluid" width="50%"></a>
           <br><br>
           <strong>BUSINESS</strong>
           <p>Coaching Leaders for success and business growth.</p>
@@ -62,7 +61,7 @@
       <div class="col-lg-3 col-sm-6 text-center pt-4">
         <div class="icon-area">
           <div class="circle-icon">
-            <a href="./?p=career"><img src="./static/img/icons/career.jpg" class="img-fluid" width="50%"></a>
+            <a href="./?p=career"><img src="./static/img/icons/career.jpg" alt="Career Coaching Logo" class="img-fluid" width="50%"></a>
           </div>
           <br>
           <strong>CAREER</strong>
@@ -72,7 +71,7 @@
       <div class="col-lg-3 col-sm-6 text-center pt-4">
         <div class="icon-area">
           <div class="circle-icon">
-            <a href="./?p=training"><img src="./static/img/icons/training.jpg" class="img-fluid" width="50%"></a>
+            <a href="./?p=training"><img src="./static/img/icons/training.jpg" alt="Team Developing Logo" class="img-fluid" width="50%"></a>
           </div>
           <br>
           <strong>TRAINING</strong>
@@ -142,31 +141,31 @@
     <div class="row my-5 pt-4 wow fadeIn align-items-center" data-wow-delay="0.2s">
 
       <div class="col-lg-3 col-md-6 text-center pt-4">
-          <img src="./static/img/badges/emcc_badge.png" class="img-fluid">
+          <img src="./static/img/badges/emcc_badge.png" alt="EMCC badge" class="img-fluid">
       </div>
       <div class="col-lg-3 col-md-6 text-center pt-4">
-          <img src="./static/img/badges/icf_badge.png" class="img-fluid">
+          <img src="./static/img/badges/icf_badge.png" alt="ICF badge" class="img-fluid">
       </div>
       <div class="col-lg-3 col-md-6 text-center pt-4">
-          <img src="./static/img/badges/bps_badge.png" class="img-fluid">
+          <img src="./static/img/badges/bps_badge.png" alt="BPS Badge" class="img-fluid">
       </div>
       <div class="col-lg-3 col-md-6 text-center pt-4">
-          <img src="./static/img/badges/genos_badge.png" class="img-fluid">
+          <img src="./static/img/badges/genos_badge.png" alt="Genos Badge" class="img-fluid">
       </div>
     </div>
 
     <div class="row my-5 pt-4 wow fadeIn" data-wow-delay="0.2s">
       <div class="col-lg-3 col-md-6 text-center pt-4">
-          <img src="./static/img/logos/IAPO_logo.jpg" class="img-fluid" width="50%">
+          <img src="./static/img/logos/IAPO_logo.jpg" alt="IAPO Logo" class="img-fluid" width="50%">
       </div>
       <div class="col-lg-3 col-md-6 text-center pt-4">
-          <img src="./static/img/logos/mindsonar.png" class="img-fluid" width="50%">
+          <img src="./static/img/logos/mindsonar.png" alt="Mindsonar Logo" class="img-fluid" width="50%">
       </div>
       <div class="col-lg-3 col-md-6 text-center pt-4">
-          <img src="./resources/img/logos/values_badge.png" class="img-fluid" width="50%">
+          <img src="./static/img/logos/values_badge.png" alt="Values Badge" class="img-fluid" width="50%">
       </div>
       <div class="col-lg-3 col-md-6 text-center pt-4">
-          <img src="./static/img/logo_cci1.png" class="img-fluid" width="50%">
+          <img src="./static/img/logo_cci1.png" alt="CCI Logo" class="img-fluid" width="50%">
       </div>
     </div>
   
@@ -223,7 +222,7 @@
           </div>
 
         </div>
-      </div> <!-- card -->
+      </div>
     </div>
   </section>
   <br>

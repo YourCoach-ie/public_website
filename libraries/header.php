@@ -49,7 +49,7 @@
 	  </style>
   </head>
 	  
-  <body align="center" style="background-color:white;">
+  <body style="background-color:white;">
   
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -60,7 +60,7 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		  <ul class="navbar-nav mr-auto">
 			  <li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+				  <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
 				  <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdownMenuLink">
 					  <a class="dropdown-item" href="./?p=business">Business Coaching</a>
 					  <a class="dropdown-item" href="./?p=career">Career Coaching</a>
@@ -68,8 +68,8 @@
 				  </div>
 			  </li>
 			  <li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a>
-				  <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdownMenuLink">
+				  <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a>
+				  <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdownMenuLink2">
 					  <a class="dropdown-item" href="./?p=ciq">CIQ®</a>
 					  <a class="dropdown-item" href="./?p=mindsonar">MindSonar®</a>
 					  <a class="dropdown-item" href="./?p=values">Values</a>

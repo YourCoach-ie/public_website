@@ -37,12 +37,12 @@ if (isset($_POST["action"])) {
 			if (preg_match('/viagra|poker|casino|bitcoin|http|и/', strtolower($form_message))
 			OR  preg_match('/viagra|poker|casino|bitcoin|http|и/', strtolower($form_name))
 			) {
-            //   echo "<meta http-equiv=\"refresh\" content=\"1; URL='https://".$_SERVER['HTTP_HOST']."' \" />";
+				echo "<meta http-equiv=\"refresh\" content=\"1; URL='https://".$_SERVER['HTTP_HOST']."' \" />";
 				echo '<br><br><br>PWeb SPAM Protection - Invalid Message!';
                 exit();
             }  
             if ($_SESSION['session_token'] !== $_POST["session_token"]) {
-            //    echo "<meta http-equiv=\"refresh\" content=\"1; URL='https://".$_SERVER['HTTP_HOST']."' \" />";
+                echo "<meta http-equiv=\"refresh\" content=\"1; URL='https://".$_SERVER['HTTP_HOST']."' \" />";
 				echo '<br><br><br>Invalid Session!';
                 exit();
 			}
@@ -62,7 +62,6 @@ if (isset($_POST["action"])) {
 			$message .= '<br><br><span style="color:#0078ae;"><b>Name:</b></span> '.$form_name;
 			$message .= '<br><span style="color:#0078ae;"><b>Email:</b></span> '.$form_email;
 			$message .= '<br><span style="color:#0078ae;"><b>Message:</b></span><br>'.$form_message;
-			$message .= '<br><br><span style="color:#0078ae;"><b>Google reCaptcha IP:</b></span><br>'.$arrResponse["hostname"];
 			$message .= '<br><br><span style="color:#0078ae;"><b>Google reCaptcha Score:</b></span><br>'.$arrResponse["score"];
 			$message .= '</p></body></html>';
 			mail($_yourcoach_mail_to,$subject,$message,$headers);
@@ -95,7 +94,6 @@ if (isset($_POST["action"])) {
 			$message .= '<img src="https://www.gravatar.com/avatar/'.md5(strtolower(trim($_POST['contact_mail']))).'size=350">';
 			$message .= '<br><br><span style="color:#0078ae;"><b>Name:</b></span> '.$_POST["contact_name"];
 			$message .= '<br><span style="color:#0078ae;"><b>Email:</b></span> '.$_POST["contact_mail"];
-			$message .= '<br><br><span style="color:#0078ae;"><b>Google reCaptcha IP:</b></span><br>'.$arrResponse["hostname"];
 			$message .= '<br><br><span style="color:#0078ae;"><b>Google reCaptcha Score:</b></span><br>'.$arrResponse["score"];
 			$message .= '</p></body></html>';
 			mail($_yourcoach_mail_to,$subject,$message,$headers);
