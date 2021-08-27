@@ -27,7 +27,7 @@ class YourCoach_DB {
 
     public function __construct($_yourcoach_host, $_yourcoach_database, $_yourcoach_user, $_yourcoach_pass){
 
-        $dsn = "mysql:host=$_yourcoach_host:3307;dbname=$_yourcoach_database;charset=utf8";
+        $dsn = "mysql:host=$_yourcoach_host;dbname=$_yourcoach_database;charset=utf8";
         $opt = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
