@@ -13,7 +13,7 @@
     <div class="line wow fadeIn container" data-wow-delay="0.2s"><hr></div>
     <br><br>
     <div class="container" align="center">
-    <img src="./static/img/logos/logo_2020.png.png" class="img-fluid" width="20%">
+    <img src="./static/img/logos/logo_2020.png" class="img-fluid" width="20%">
     <br><h2>YOUR COACH</h2>
     Business - Career - Life
     <br><br><br><br><br><br>
